@@ -1,0 +1,67 @@
+2026-01-13 08:00:01 INFO  [Main] - Starting Application v2.4.0 on node-01
+2026-01-13 08:00:02 INFO  [Main] - Loading configuration from /etc/app/config.yml
+2026-01-13 08:00:05 DEBUG [Config] - Database URL set to jdbc:postgresql://db.internal:5432/prod
+2026-01-13 08:00:08 INFO  [Database] - Establishing connection pool...
+2026-01-13 08:00:12 INFO  [Database] - Connection pool initialized. Size: 20
+2026-01-13 08:00:15 INFO  [Server] - HTTP Server started on port 8080
+2026-01-13 08:05:22 INFO  [Auth] - User login successful: user_id=1042
+2026-01-13 08:06:11 WARN  [Cache] - Cache miss ratio exceeding threshold (85%)
+2026-01-13 08:07:45 INFO  [Auth] - User login successful: user_id=9921
+2026-01-13 08:10:02 ERROR [PaymentGateway] - Timeout connecting to Stripe API
+2026-01-13 08:10:02 DEBUG [PaymentGateway] - Retrying connection in 500ms...
+2026-01-13 08:10:03 INFO  [PaymentGateway] - Retry successful. Transaction ID: TXN_99012
+2026-01-13 08:12:30 INFO  [Auth] - User login successful: user_id=4432
+2026-01-13 08:15:44 ERROR [OrderService] - Failed to process order ORD-772
+java.lang.NullPointerException: Cannot invoke "String.toLowerCase()" because "sku" is null
+    at com.app.orders.Process.validate(Process.java:45)
+    at com.app.orders.Process.execute(Process.java:12)
+    at com.app.web.Controller.handleOrder(Controller.java:88)
+2026-01-13 08:16:10 INFO  [Auth] - User logout: user_id=1042
+2026-01-13 08:20:15 WARN  [System] - High memory usage detected: 88%
+2026-01-13 08:21:03 INFO  [Auth] - User login successful: user_id=5510
+2026-01-13 08:22:12 INFO  [Inventory] - Inventory updated for SKU-8821
+2026-01-13 08:25:33 DEBUG [Session] - Session expired for user_id=9921
+2026-01-13 08:30:00 INFO  [Scheduler] - Starting daily cleanup task
+2026-01-13 08:31:45 ERROR [Database] - Deadlock detected on update query
+2026-01-13 08:31:45 INFO  [Database] - Rolling back transaction TXN_99044
+2026-01-13 08:32:10 INFO  [Database] - Transaction TXN_99044 retried successfully
+2026-01-13 08:35:12 INFO  [Auth] - User login successful: user_id=2219
+2026-01-13 08:40:55 WARN  [Cache] - Disk persistent storage near capacity (92%)
+2026-01-13 08:45:11 INFO  [Auth] - User login successful: user_id=1103
+2026-01-13 08:50:04 INFO  [Server] - Incoming request: GET /api/v1/status from 192.168.1.45
+2026-01-13 08:52:19 ERROR [Auth] - Invalid JWT signature detected from 10.0.0.12
+2026-01-13 08:55:01 INFO  [Scheduler] - Daily cleanup task completed
+2026-01-13 09:00:10 INFO  [Auth] - User login successful: user_id=3304
+2026-01-13 09:05:44 ERROR [FileStorage] - Permission denied writing to /var/data/uploads/
+java.io.IOException: Permission denied
+    at java.base/java.io.FileOutputStream.open0(Native Method)
+    at java.base/java.io.FileOutputStream.open(FileOutputStream.java:298)
+    at com.app.storage.FileWriter.save(FileWriter.java:22)
+2026-01-13 09:06:12 WARN  [System] - CPU load average (5.2) above threshold (4.0)
+2026-01-13 09:10:33 INFO  [Auth] - User logout: user_id=5510
+2026-01-13 09:12:45 DEBUG [Config] - Reloading dynamic properties...
+2026-01-13 09:15:00 INFO  [Auth] - User login successful: user_id=7781
+2026-01-13 09:20:22 INFO  [PaymentGateway] - Processing refund RFD-002
+2026-01-13 09:22:10 ERROR [OrderService] - Integrity constraint violation: Duplicate key ORD-772
+2026-01-13 09:25:44 INFO  [Auth] - User login successful: user_id=6612
+2026-01-13 09:28:11 WARN  [Network] - Latency to secondary DC increased to 150ms
+2026-01-13 09:30:05 INFO  [Auth] - User logout: user_id=2219
+2026-01-13 09:35:55 INFO  [Inventory] - SKU-1102 restocked (+50 units)
+2026-01-13 09:40:12 DEBUG [Session] - Cleaning up idle sessions
+2026-01-13 09:42:01 INFO  [Auth] - User login successful: user_id=8831
+2026-01-13 09:45:10 ERROR [EmailService] - SMTP server connection refused (port 587)
+2026-01-13 09:50:44 INFO  [Server] - Incoming request: POST /api/v1/orders from 192.168.1.55
+2026-01-13 09:55:12 INFO  [Auth] - User login successful: user_id=1290
+2026-01-13 10:00:01 INFO  [Main] - Health check: ALL SYSTEMS OPERATIONAL
+2026-01-13 10:02:15 WARN  [Database] - Slow query detected (1.2s): SELECT * FROM orders WHERE status='PENDING'
+2026-01-13 10:05:44 INFO  [Auth] - User logout: user_id=7781
+2026-01-13 10:08:12 INFO  [Inventory] - Inventory sync completed with Warehouse-B
+2026-01-13 10:10:55 ERROR [System] - OutOfMemoryError: Metaspace
+java.lang.OutOfMemoryError: Metaspace
+    at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+    at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017)
+    at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
+2026-01-13 10:11:00 INFO  [Main] - Initiating graceful shutdown...
+2026-01-13 10:11:05 INFO  [Server] - Stopping HTTP Server
+2026-01-13 10:11:10 INFO  [Database] - Closing connection pool
+2026-01-13 10:11:12 INFO  [Main] - Application shutdown complete.
